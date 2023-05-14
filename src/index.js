@@ -5,12 +5,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
+import productReducer from './features/productReducer/ProductSlice';
 
 const store = configureStore({
-  reducer:{
-    // product:
-  }
-})
+  reducer: {
+    products: productReducer,
+  },
+});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
