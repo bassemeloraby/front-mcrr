@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-// import Table from 'react-bootstrap/Table';
+import Table from 'react-bootstrap/Table';
 import { getPro } from '../features/productReducer/ProductSlice';
 function Product() {
   const { products } = useSelector((state) => state.products);
@@ -12,9 +12,20 @@ function Product() {
 
   return (
     <div>
-      {products.map((product) => (
-        <h1>{product.productName}</h1>
-      ))}
+      <Table striped bordered hover>
+        <thead>
+          <tr style={{ backgroundColor: 'orange' }}>
+            <th>Product</th>
+          </tr>
+        </thead>
+        <tbody>
+          {products.map((product) => (
+            <tr key={product._id}>
+              <td>{product.productName}</td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
     </div>
   );
 }
