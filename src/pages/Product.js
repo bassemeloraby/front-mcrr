@@ -3,10 +3,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import Table from 'react-bootstrap/Table';
 import { getPro } from '../features/productReducer/ProductSlice';
 import Button from 'react-bootstrap/Button';
+import { useNavigate } from 'react-router-dom';
 
 
 function Product() {
   const { products } = useSelector((state) => state.products);
+
+  const navigate = useNavigate();
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -16,7 +19,7 @@ function Product() {
   return (
     <div>
     <section className='mb-1 mt-1'>
-    <Button variant="success">Create +</Button>{' '}
+    <Button variant="success" onClick={()=> navigate('/create-product')}>Create +</Button>{' '}
     </section>
     <section>
       <Table striped bordered hover>

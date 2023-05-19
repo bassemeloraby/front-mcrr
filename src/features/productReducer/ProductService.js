@@ -8,8 +8,16 @@ const getProducts = async () => {
   return response.data;
 };
 
+// Create new product
+const addProduct = async (productName) => {
+  const response = await axios.post(API_URL, productName);
+
+  return response.data;
+};
+
 const ProductService = {
   getProducts,
+  addProduct
 };
 
 export default ProductService;
