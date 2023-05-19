@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import ProductService from './ProductService';
 
 
-
+// get products
 export const getPro = createAsyncThunk('products/getPro', ProductService.getProducts);
 
 const productSlice = createSlice({

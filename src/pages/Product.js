@@ -15,6 +15,10 @@ function Product() {
 
   return (
     <div>
+    <section className='mb-1 mt-1'>
+    <Button variant="success">Create +</Button>{' '}
+    </section>
+    <section>
       <Table striped bordered hover>
         <thead>
           <tr style={{ backgroundColor: 'orange' }}>
@@ -34,6 +38,7 @@ function Product() {
           ))}
         </tbody>
       </Table>
+      </section>
     </div>
   );
 }
