@@ -1,15 +1,9 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
+import ProductService from './ProductService';
 
-const API_URL = 'https://sore-lime-goat-tam.cyclic.app/api/products';
 
-const getProducts = async () => {
-  const response = await axios.get(API_URL);
 
-  return response.data;
-};
-
-export const getPro = createAsyncThunk('products/getPro', getProducts);
+export const getPro = createAsyncThunk('products/getPro', ProductService.getProducts);
 
 const productSlice = createSlice({
   name: 'products',
