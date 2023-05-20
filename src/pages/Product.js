@@ -6,14 +6,18 @@ import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
 
 function Product() {
-  const { products } = useSelector((state) => state.products);
+  const { products, loading } = useSelector((state) => state.products);
 
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getPro());
-  }, [dispatch,products]);
+  }, [dispatch, products]);
+
+  // if (loading) {
+  //   return <h1>Loading...</h1>;
+  // }
 
   return (
     <div>
@@ -35,7 +39,7 @@ function Product() {
               <tr key={product._id}>
                 <td>{product.productName}</td>
                 <td>
-                  <Button>Edit</Button>
+                  <Button onClick={() => navigate(`/edit-product/${product._id}`)}>Edit</Button>
                   <Button
                     variant="danger"
                     className="ms-2"

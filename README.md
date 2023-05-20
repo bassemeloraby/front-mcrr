@@ -2,3 +2,4 @@ npm i redux react-redux redux-thunk @reduxjs/toolkit react-bootstrap bootstrap r
 ==================================
 https://www.youtube.com/watch?v=DOkSU3yg4vQ
 00:09:30
+00:20:00

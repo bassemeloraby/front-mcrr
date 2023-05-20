@@ -7,7 +7,6 @@ export const getPro = createAsyncThunk(
   ProductService.getProducts
 );
 
-
 //add product
 export const addPro = createAsyncThunk(
   'products/addPro',
@@ -34,7 +33,7 @@ export const deletePro = createAsyncThunk(
 
 const productSlice = createSlice({
   name: 'products',
-  initialState: { products: [] },
+  initialState: { products: [], loading: false },
   extraReducers: (builder) => {
     builder
       .addCase(getPro.pending, (state, action) => {
@@ -57,7 +56,8 @@ const productSlice = createSlice({
       .addCase(addPro.rejected, (state, action) => {
         state.loading = false;
         state.message = action.payload;
-      }).addCase(deletePro.pending, (state) => {
+      })
+      .addCase(deletePro.pending, (state) => {
         state.loading = true;
       })
       .addCase(deletePro.fulfilled, (state, action) => {
