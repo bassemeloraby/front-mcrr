@@ -23,6 +23,7 @@ function CreateProduct() {
 
   return (
     <div>
+    <h2>create user</h2>
       <Form onSubmit={productSubmit}>
         <Form.Group className="mb-3">
           <Form.Label>Product Name</Form.Label>
